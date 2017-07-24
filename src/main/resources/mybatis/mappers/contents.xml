@@ -11,7 +11,7 @@
 	</select>
 
 	<select id="selectSubmenu" resultType="submenuVO">
-		SELECT id, submenu_id, img, title, content, users_img, user_id
+		SELECT id, submenu_id, img, title, content, users_img, user_id, together
 		  FROM tbl_submenu
 		 WHERE id = #{id}
 		 ORDER BY submenu_id

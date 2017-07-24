@@ -1,4 +1,4 @@
-package com.hanbit.hsc.front;
+package com.hanbit.hsc.back;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HscFrontApplicationTests {
+public class HscBackApplicationTests {
 
 	@Test
 	public void contextLoads() {

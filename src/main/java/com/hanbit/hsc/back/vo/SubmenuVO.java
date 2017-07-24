@@ -9,6 +9,7 @@ public class SubmenuVO {
 	private String content;
 	private String usersImg;
 	private String userId;
+	private String together;
 
 	public String getId() {
 		return id;
@@ -66,4 +67,12 @@ public class SubmenuVO {
 		this.userId = userId;
 	}
 
+	public String getTogether() {
+		return together;
+	}
+
+	public void setTogether(String together) {
+		this.together = together;
+	}
+	
 }

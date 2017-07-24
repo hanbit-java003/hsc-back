@@ -1,4 +1,4 @@
-package com.hanbit.hsc.front.config;
+package com.hanbit.hsc.back.config;
 
 import javax.sql.DataSource;
 

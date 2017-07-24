@@ -1,10 +1,10 @@
-package com.hanbit.hsc.front.service;
+package com.hanbit.hsc.back.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hanbit.hsc.front.dao.ContentsDAO;
-import com.hanbit.hsc.front.vo.ContentsVO;
+import com.hanbit.hsc.back.dao.ContentsDAO;
+import com.hanbit.hsc.back.vo.ContentsVO;
 
 @Service
 public class ContentsService {

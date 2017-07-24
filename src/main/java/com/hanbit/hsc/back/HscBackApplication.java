@@ -1,12 +1,12 @@
-package com.hanbit.hsc.front;
+package com.hanbit.hsc.back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HscFrontApplication {
+public class HscBackApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HscFrontApplication.class, args);
+		SpringApplication.run(HscBackApplication.class, args);
 	}
 }

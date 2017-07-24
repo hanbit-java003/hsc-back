@@ -1,4 +1,4 @@
-package com.hanbit.hsc.front.dao;
+package com.hanbit.hsc.back.dao;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.hanbit.hsc.front.vo.ContentsVO;
-import com.hanbit.hsc.front.vo.SubmenuVO;
+import com.hanbit.hsc.back.vo.ContentsVO;
+import com.hanbit.hsc.back.vo.SubmenuVO;
 
 @Repository
 public class ContentsDAO {

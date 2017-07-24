@@ -1,4 +1,4 @@
-package com.hanbit.hsc.front.vo;
+package com.hanbit.hsc.back.vo;
 
 import java.util.List;
 

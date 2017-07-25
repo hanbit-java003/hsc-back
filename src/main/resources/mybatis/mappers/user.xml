@@ -9,8 +9,8 @@
 		  FROM tbl_users
 	</select>
 
-	<select id="selectVisited" parameterType="String" resultType="visitedVO">
-		SELECT visited, visited_img
+	<select id="selectVisited" parameterType="int" resultType="visitedVO">
+		SELECT user_no, visited_img
 		  FROM tbl_users_sub
 		 WHERE user_no = #{userNo};
 	</select>

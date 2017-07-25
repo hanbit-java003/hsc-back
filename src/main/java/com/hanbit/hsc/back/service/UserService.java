@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.hanbit.hsc.back.dao.UserDAO;
 import com.hanbit.hsc.back.vo.UserVO;
+import com.hanbit.hsc.back.vo.VisitedVO;
 
 @Service
 public class UserService {
@@ -16,6 +17,10 @@ public class UserService {
 	
 	public List<UserVO> getUsers() {
 		return userDAO.selectUsers();
+	}
+	
+	public List<VisitedVO> getVisited(int id) {
+		return userDAO.selectVisited(id);
 	}
 	
 }

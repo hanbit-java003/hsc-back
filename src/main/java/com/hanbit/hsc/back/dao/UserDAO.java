@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hanbit.hsc.back.vo.UserVO;
+import com.hanbit.hsc.back.vo.VisitedVO;
 
 @Repository
 public class UserDAO {
@@ -16,6 +17,10 @@ public class UserDAO {
 	
 	public List<UserVO> selectUsers() {
 		return sqlSession.selectList("user.selectUsers");
+	}
+	
+	public List<VisitedVO> selectVisited(int id) {
+		return sqlSession.selectList("user.selectVisited", id);
 	}
 	
 }

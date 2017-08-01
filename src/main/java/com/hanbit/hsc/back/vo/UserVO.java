@@ -9,6 +9,7 @@ public class UserVO {
 	private String img;
 	private String text;
 	private List<VisitedVO> visited;
+	private List<SubmenuVO> submenu;
 
 	public String getUserNo() {
 		return userNo;
@@ -48,6 +49,14 @@ public class UserVO {
 
 	public void setVisited(List<VisitedVO> visited) {
 		this.visited = visited;
+	}
+
+	public List<SubmenuVO> getSubmenu() {
+		return submenu;
+	}
+
+	public void setSubmenu(List<SubmenuVO> submenu) {
+		this.submenu = submenu;
 	}
 
 }

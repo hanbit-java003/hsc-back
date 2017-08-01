@@ -7,8 +7,9 @@ public class SubmenuVO {
 	private String img;
 	private String title;
 	private String content;
-	private String usersImg;
+	private String userNo;
 	private String userId;
+	private String usersImg;
 	private String together;
 
 	public String getId() {
@@ -51,6 +52,14 @@ public class SubmenuVO {
 		this.content = content;
 	}
 
+	public String getUserNo() {
+		return userNo;
+	}
+
+	public void setUserNo(String userNo) {
+		this.userNo = userNo;
+	}
+
 	public String getUsersImg() {
 		return usersImg;
 	}
@@ -74,5 +83,5 @@ public class SubmenuVO {
 	public void setTogether(String together) {
 		this.together = together;
 	}
-	
+
 }

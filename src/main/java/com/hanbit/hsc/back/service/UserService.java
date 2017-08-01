@@ -24,7 +24,10 @@ public class UserService {
 	}
 	
 	public UserVO getUser(String no) {
-		return userDAO.selectUser(no);
+		UserVO user = userDAO.selectUser(no);
+		user.setSubmenu(userDAO.selectSubmenu(no));
+		
+		return user;
 	}
 	
 }

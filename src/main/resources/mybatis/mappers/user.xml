@@ -12,12 +12,26 @@
 	<select id="selectVisited" parameterType="int" resultType="visitedVO">
 		SELECT user_no, visited_img
 		  FROM tbl_users_sub
-		 WHERE user_no = #{userNo};
+		 WHERE user_no = #{userNo}
+	</select>
+	
+	<select id="" parameterType="string" resultType="userVO">
+		SELECT u.user_no, u.user_id, u.img, u.text, s.title, s.content, s.img
+		  FROM tbl_users u 
+		  LEFT JOIN tbl_submenu s
+			ON u.user_no = s.user_no
+		 WHERE u.user_no = #{no}
 	</select>
 	
 	<select id="selectUser" parameterType="string" resultType="userVO">
 		SELECT user_no, user_id, img, text
 		  FROM tbl_users
+		 WHERE user_no = #{no}
+	</select>
+	
+	<select id="selectSubmenu" parameterType="string" resultType="submenuVO">
+		SELECT user_no, user_id, users_img, title, content, img
+		  FROM tbl_submenu
 		 WHERE user_no = #{no}
 	</select>
 

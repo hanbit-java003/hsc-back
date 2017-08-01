@@ -14,6 +14,12 @@
 		  FROM tbl_users_sub
 		 WHERE user_no = #{userNo};
 	</select>
+	
+	<select id="selectUser" parameterType="string" resultType="userVO">
+		SELECT user_no, user_id, img, text
+		  FROM tbl_users
+		 WHERE user_no = #{no}
+	</select>
 
 </mapper>
 

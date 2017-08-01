@@ -28,4 +28,9 @@ public class UserController {
 		return userService.getVisited(id);
 	}
 	
+	@RequestMapping("/user/{no}")
+	public UserVO getUser(@PathVariable("no") String no) {
+		return userService.getUser(no);
+	}
+	
 }

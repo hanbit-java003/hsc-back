@@ -23,4 +23,8 @@ public class UserService {
 		return userDAO.selectVisited(id);
 	}
 	
+	public UserVO getUser(String no) {
+		return userDAO.selectUser(no);
+	}
+	
 }

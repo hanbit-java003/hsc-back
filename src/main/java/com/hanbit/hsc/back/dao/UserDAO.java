@@ -23,4 +23,8 @@ public class UserDAO {
 		return sqlSession.selectList("user.selectVisited", id);
 	}
 	
+	public UserVO selectUser(String no) {
+		return sqlSession.selectOne("user.selectUser", no);
+	}
+	
 }

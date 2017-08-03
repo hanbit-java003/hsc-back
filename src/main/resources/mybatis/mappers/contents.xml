@@ -17,6 +17,12 @@
 		 ORDER BY submenu_id
 	</select>
 
+	<select id="selectSubmenus" resultType="submenuVO">
+		SELECT img, title, content, user_no, user_id, users_img, together
+		  FROM tbl_submenu
+		 ORDER BY user_no
+	</select>
+
 </mapper>
 
 

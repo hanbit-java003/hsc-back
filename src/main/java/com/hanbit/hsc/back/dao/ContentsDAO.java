@@ -23,4 +23,8 @@ public class ContentsDAO {
 		return sqlSession.selectList("contents.selectSubmenu", id);
 	}
 	
+	public List<SubmenuVO> selectSubmenus() {
+		return sqlSession.selectList("contents.selectSubmenus");
+	}
+	
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hanbit.hsc.back.vo.SubmenuVO;
+import com.hanbit.hsc.back.vo.UserSubVO;
 import com.hanbit.hsc.back.vo.UserVO;
 import com.hanbit.hsc.back.vo.VisitedVO;
 
@@ -30,6 +31,10 @@ public class UserDAO {
 	
 	public List<SubmenuVO> selectSubmenu(String no) {
 		return sqlSession.selectList("user.selectSubmenu", no);
+	}
+	
+	public List<UserSubVO> selectUserSub(String no) {
+		return sqlSession.selectList("user.selectUserSub", no);
 	}
 	
 }

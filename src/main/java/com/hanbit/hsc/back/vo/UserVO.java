@@ -8,8 +8,8 @@ public class UserVO {
 	private String userId;
 	private String img;
 	private String text;
-	private List<VisitedVO> visited;
 	private List<SubmenuVO> submenu;
+	private List<UserSubVO> userSub;
 
 	public String getUserNo() {
 		return userNo;
@@ -43,20 +43,20 @@ public class UserVO {
 		this.text = text;
 	}
 
-	public List<VisitedVO> getVisited() {
-		return visited;
-	}
-
-	public void setVisited(List<VisitedVO> visited) {
-		this.visited = visited;
-	}
-
 	public List<SubmenuVO> getSubmenu() {
 		return submenu;
 	}
 
 	public void setSubmenu(List<SubmenuVO> submenu) {
 		this.submenu = submenu;
+	}
+
+	public List<UserSubVO> getUserSub() {
+		return userSub;
+	}
+
+	public void setUserSub(List<UserSubVO> userSub) {
+		this.userSub = userSub;
 	}
 
 }

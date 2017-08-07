@@ -34,6 +34,12 @@
 		  FROM tbl_submenu
 		 WHERE user_no = #{no}
 	</select>
+	
+	<select id="selectUserSub" parameterType="string" resultType="userSubVO">
+		SELECT visited, user_no, visited_img
+		  FROM tbl_users_sub
+		 WHERE user_no = #{no} 
+	</select>
 
 </mapper>
 

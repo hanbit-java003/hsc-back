@@ -14,6 +14,7 @@
 		<typeAlias alias="submenuVO" type="com.hanbit.hsc.back.vo.SubmenuVO"/>
 		<typeAlias alias="userVO" type="com.hanbit.hsc.back.vo.UserVO"/>
 		<typeAlias alias="visitedVO" type="com.hanbit.hsc.back.vo.VisitedVO"/>
+		<typeAlias alias="userSubVO" type="com.hanbit.hsc.back.vo.UserSubVO"/>
 	</typeAliases>
 	
 </configuration>

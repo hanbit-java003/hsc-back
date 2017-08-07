@@ -25,6 +25,7 @@ public class UserService {
 	
 	public UserVO getUser(String no) {
 		UserVO user = userDAO.selectUser(no);
+		user.setUserSub(userDAO.selectUserSub(no));
 		user.setSubmenu(userDAO.selectSubmenu(no));
 		
 		return user;

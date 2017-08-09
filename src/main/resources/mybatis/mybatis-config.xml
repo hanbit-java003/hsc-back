@@ -15,6 +15,8 @@
 		<typeAlias alias="userVO" type="com.hanbit.hsc.back.vo.UserVO"/>
 		<typeAlias alias="visitedVO" type="com.hanbit.hsc.back.vo.VisitedVO"/>
 		<typeAlias alias="userSubVO" type="com.hanbit.hsc.back.vo.UserSubVO"/>
+		
+		<typeAlias alias="adminGroupVO" type="com.hanbit.hsc.back.admin.vo.AdminGroupVO"/>
 	</typeAliases>
 	
 </configuration>

@@ -11,14 +11,14 @@
 	</select>
 
 	<select id="selectSubmenu" resultType="submenuVO">
-		SELECT id, submenu_id, img, title, content, users_img, user_id, together
+		SELECT id, submenu_id, img, title, content, users_img, user_id, together, like_count
 		  FROM tbl_submenu
 		 WHERE id = #{id}
 		 ORDER BY submenu_id
 	</select>
 
 	<select id="selectSubmenus" resultType="submenuVO">
-		SELECT img, title, content, user_no, user_id, users_img, together
+		SELECT img, title, content, user_no, user_id, users_img, together, like_count
 		  FROM tbl_submenu
 		 ORDER BY user_no
 	</select>

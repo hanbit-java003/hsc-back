@@ -58,6 +58,7 @@ CREATE TABLE `tbl_submenu` (
   `user_id` varchar(100) NOT NULL,
   `users_img` varchar(200) NOT NULL,
   `together` varchar(45) DEFAULT NULL,
+  `like_count` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`,`submenu_id`,`user_no`,`user_id`,`users_img`),
   KEY `fk_tbl_submenu_tbl_users1_idx` (`user_no`,`user_id`,`users_img`),
   CONSTRAINT `fk_tbl_submenu_tbl_contents` FOREIGN KEY (`id`) REFERENCES `tbl_contents` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -71,7 +72,7 @@ CREATE TABLE `tbl_submenu` (
 
 LOCK TABLES `tbl_submenu` WRITE;
 /*!40000 ALTER TABLE `tbl_submenu` DISABLE KEYS */;
-INSERT INTO `tbl_submenu` VALUES ('france','1','./img/albums/view.jpg','스물 셋, 그림속을 거닐다.','#유럽 #나홀로여행 #프랑스 #여름이야기 #전국일주',1,'중기꺼','img/user/shk.jpg',NULL),('france','2','./img/albums/france.jpg','프랑스~모로코','',3,'이지금','img/user/iu.jpg','true'),('france','3','./img/albums/eftower.jpg','Je t\'aime, Paris!','#여행을쓰자 #파리 #프랑스 #여름이야기 #유럽',2,'문뽕구','img/user/mcw.jpg',NULL),('hungary','1','./img/albums/hung1.jpg','온천의 도시 부다페스트','#부다페스트 #온천',7,'족구왕안나','img/user/hsu.jpg',NULL),('hungary','2','./img/albums/hung2.jpg','Budapest, 사랑할 수밖에 없잖아!','#유럽여행 #헝가리 #부다페스트 #Budapest #여행을쓰다',8,'호동이','img/user/khd.jpg',NULL),('hungary','3','./img/albums/hung3.jpg','여행기록2 Budapest','다페스트 #헝가리 #유럽 #유럽여행 #동유럽',3,'이지금','img/user/iu.jpg',NULL),('jeju','1','./img/albums/jeju1.jpg','엄마랑 2박3일 제주도 여행','',5,'세젤예','img/user/ireane.jpg','true'),('jeju','2','./img/albums/jeju2.jpg','1박2일 모녀여행 제주 한바퀴~','#제주 #제주도 #제주여행 #모녀여행 #제주한바퀴',4,'제니','img/user/jennie.jpg',NULL),('jeju','3','./img/albums/jeju3.jpg','떠나요. 제주도푸른밤★','#제주도 #가족여행',6,'태봉궁예','img/user/gungye.jpg',NULL);
+INSERT INTO `tbl_submenu` VALUES ('france','1','./img/albums/view.jpg','스물 셋, 그림속을 거닐다.','#유럽 #나홀로여행 #프랑스 #여름이야기 #전국일주',1,'중기꺼','img/user/shk.jpg',NULL,0),('france','2','./img/albums/france.jpg','프랑스~모로코','',3,'이지금','img/user/iu.jpg','true',0),('france','3','./img/albums/eftower.jpg','Je t\'aime, Paris!','#여행을쓰자 #파리 #프랑스 #여름이야기 #유럽',2,'문뽕구','img/user/mcw.jpg',NULL,0),('hungary','1','./img/albums/hung1.jpg','온천의 도시 부다페스트','#부다페스트 #온천',7,'족구왕안나','img/user/hsu.jpg',NULL,0),('hungary','2','./img/albums/hung2.jpg','Budapest, 사랑할 수밖에 없잖아!','#유럽여행 #헝가리 #부다페스트 #Budapest #여행을쓰다',8,'호동이','img/user/khd.jpg',NULL,0),('hungary','3','./img/albums/hung3.jpg','여행기록2 Budapest','다페스트 #헝가리 #유럽 #유럽여행 #동유럽',3,'이지금','img/user/iu.jpg',NULL,0),('jeju','1','./img/albums/jeju1.jpg','엄마랑 2박3일 제주도 여행','',5,'세젤예','img/user/ireane.jpg','true',0),('jeju','2','./img/albums/jeju2.jpg','1박2일 모녀여행 제주 한바퀴~','#제주 #제주도 #제주여행 #모녀여행 #제주한바퀴',4,'제니','img/user/jennie.jpg',NULL,0),('jeju','3','./img/albums/jeju3.jpg','떠나요. 제주도푸른밤★','#제주도 #가족여행',6,'태봉궁예','img/user/gungye.jpg',NULL,0);
 /*!40000 ALTER TABLE `tbl_submenu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +127,7 @@ CREATE TABLE `tbl_users_sub` (
 
 LOCK TABLES `tbl_users_sub` WRITE;
 /*!40000 ALTER TABLE `tbl_users_sub` DISABLE KEYS */;
-INSERT INTO `tbl_users_sub` VALUES ('china','img/flag/cn.png',2,'문뽕구','img/user/mcw.jpg'),('china','img/flag/cn.png',5,'세젤예','img/user/ireane.jpg'),('czech','img/flag/cz.png',1,'중기꺼','img/user/shk.jpg'),('czech','img/flag/cz.png',5,'세젤예','img/user/ireane.jpg'),('england','img/flag/eng.png',3,'이지금','img/user/iu.jpg'),('japan','img/flag/jpn.png',4,'제니','img/user/jennie.jpg'),('japan','img/flag/jpn.png',5,'세젤예','img/user/ireane.jpg'),('korea','img/flag/kor.png',1,'중기꺼','img/user/shk.jpg'),('korea','img/flag/kor.png',5,'세젤예','img/user/ireane.jpg'),('spain','img/flag/spain.png',3,'이지금','img/user/iu.jpg'),('turkey','img/flag/tk.png',3,'이지금','img/user/iu.jpg');
+INSERT INTO `tbl_users_sub` VALUES ('china','img/flag/cn.png',2,'문뽕구','img/user/mcw.jpg'),('china','img/flag/cn.png',5,'세젤예','img/user/ireane.jpg'),('china','img/flag/cn.png',6,'태봉궁예','img/user/gungye.jpg'),('china','img/flag/cn.png',7,'족구왕안나','img/user/hsu.jpg'),('czech','img/flag/cz.png',1,'중기꺼','img/user/shk.jpg'),('czech','img/flag/cz.png',5,'세젤예','img/user/ireane.jpg'),('czech','img/flag/cz.png',6,'태봉궁예','img/user/gungye.jpg'),('czech','img/flag/cz.png',7,'족구왕안나','img/user/hsu.jpg'),('england','img/flag/eng.png',3,'이지금','img/user/iu.jpg'),('england','img/flag/eng.png',7,'족구왕안나','img/user/hsu.jpg'),('japan','img/flag/jpn.png',4,'제니','img/user/jennie.jpg'),('japan','img/flag/jpn.png',5,'세젤예','img/user/ireane.jpg'),('japan','img/flag/jpn.png',6,'태봉궁예','img/user/gungye.jpg'),('japan','img/flag/jpn.png',7,'족구왕안나','img/user/hsu.jpg'),('korea','img/flag/kor.png',1,'중기꺼','img/user/shk.jpg'),('korea','img/flag/kor.png',5,'세젤예','img/user/ireane.jpg'),('korea','img/flag/kor.png',6,'태봉궁예','img/user/gungye.jpg'),('korea','img/flag/kor.png',7,'족구왕안나','img/user/hsu.jpg'),('spain','img/flag/spain.png',3,'이지금','img/user/iu.jpg'),('spain','img/flag/spain.png',7,'족구왕안나','img/user/hsu.jpg'),('turkey','img/flag/tk.png',3,'이지금','img/user/iu.jpg'),('turkey','img/flag/tk.png',7,'족구왕안나','img/user/hsu.jpg'),('usa','img/flag/usa.png',7,'족구왕안나','img/user/hsu.jpg');
 /*!40000 ALTER TABLE `tbl_users_sub` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -139,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-09 14:47:41
+-- Dump completed on 2017-08-11 16:57:15

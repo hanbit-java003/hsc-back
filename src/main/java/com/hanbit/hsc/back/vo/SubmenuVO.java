@@ -11,6 +11,7 @@ public class SubmenuVO {
 	private String userId;
 	private String usersImg;
 	private String together;
+	private int likeCount;
 
 	public String getId() {
 		return id;
@@ -82,6 +83,14 @@ public class SubmenuVO {
 
 	public void setTogether(String together) {
 		this.together = together;
+	}
+
+	public int getLikeCount() {
+		return likeCount;
+	}
+
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
 	}
 
 }

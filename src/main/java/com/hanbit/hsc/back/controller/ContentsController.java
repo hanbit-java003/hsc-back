@@ -12,19 +12,19 @@ import com.hanbit.hsc.back.vo.ContentsVO;
 import com.hanbit.hsc.back.vo.SubmenuVO;
 
 @RestController
-@RequestMapping("/api/main")
+@RequestMapping("/api")
 public class ContentsController {
 
 	@Autowired
 	private ContentsService contentsService;
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("/main/{id}")
 	public ContentsVO getContents(@PathVariable("id") String id) {
 		
 		return contentsService.getContents(id);
 	}
 	
-	@RequestMapping("/result")
+	@RequestMapping("/main/result")
 	public List<SubmenuVO> getSubmenus() {
 		return contentsService.getSubmenus();
 	}

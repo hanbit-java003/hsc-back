@@ -47,4 +47,18 @@ public class MemberService {
 		return new String(uid);
 	}
 
+	public MemberVO signIn(String email, String pwd) {
+		MemberVO memberVO = memberDAO.selectMember(email);
+		
+		if (memberVO == null) {
+			throw new RuntimeException("이메일 확인하세요.");
+		}
+		
+		if (!pwdEncoder.matches(pwd, memberVO.getPwd())) {
+			throw new RuntimeException("비밀번호 확인하세요.");
+		}
+		
+		return memberVO;
+	}
+	
 }

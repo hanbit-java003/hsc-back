@@ -7,6 +7,7 @@ public class MemberVO {
 	private String pwd;
 	private String registDt;
 	private String registBy;
+	private String id;
 
 	public String getUid() {
 		return uid;
@@ -46,6 +47,14 @@ public class MemberVO {
 
 	public void setRegistBy(String registBy) {
 		this.registBy = registBy;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

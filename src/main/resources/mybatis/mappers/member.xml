@@ -12,9 +12,9 @@
 	
 	<insert id="insertMember" parameterType="memberVO">
 		INSERT into tbl_member
-			(uid, email, pwd, regist_dt, regist_by)
+			(uid, email, pwd, regist_dt, regist_by, id)
 		VALUES
-			(#{uid}, #{email}, #{pwd}, NOW(), #{registBy})
+			(#{uid}, #{email}, #{pwd}, NOW(), #{registBy}, #{id})
 	</insert>
 	
 </mapper>

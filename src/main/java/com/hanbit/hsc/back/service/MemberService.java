@@ -3,6 +3,7 @@ package com.hanbit.hsc.back.service;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.hanbit.hsc.back.dao.MemberDAO;
@@ -15,6 +16,9 @@ public class MemberService {
 
 	@Autowired
 	private MemberDAO memberDAO;
+	
+	@Autowired
+	private PasswordEncoder pwdEncoder;
 
 	public void signUp(MemberVO memberVO) {
 		if (memberDAO.countMember(memberVO.getEmail()) > 0) {
@@ -23,7 +27,8 @@ public class MemberService {
 
 		memberVO.setUid(generateUid());
 		
-		// TODO: password must encrypt
+		String ecodedPwd = pwdEncoder.encode(memberVO.getPwd());
+		memberVO.setPwd(ecodedPwd);
 
 		memberDAO.insertMember(memberVO);
 	}

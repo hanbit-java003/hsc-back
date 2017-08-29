@@ -91,7 +91,6 @@ SELECT img, title, content, user_no, user_id, users_img, together, like_count, s
 		  FROM tbl_submenu
 		 ORDER BY user_no;
 
-
 UPDATE `tbl_submenu` SET `like_count`= like_count + 1 WHERE `id`='france' and`submenu_id`='1' and`user_no`='1';
 
 SELECT * FROM hsc_front.tbl_member;

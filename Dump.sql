@@ -54,8 +54,10 @@ CREATE TABLE `tbl_member` (
   `pwd` varchar(300) NOT NULL,
   `regist_dt` varchar(300) NOT NULL,
   `regist_by` varchar(100) DEFAULT NULL,
+  `id` varchar(200) NOT NULL,
   PRIMARY KEY (`uid`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,6 +67,7 @@ CREATE TABLE `tbl_member` (
 
 LOCK TABLES `tbl_member` WRITE;
 /*!40000 ALTER TABLE `tbl_member` DISABLE KEYS */;
+INSERT INTO `tbl_member` VALUES ('jkq2HLM7iejWVBan','qwerty@hanbit.com','0ce8c19368f9f56cb04c893e70b85909a0a3c6e65a32b7310eac86a1c9e28582bd5d58933072b683','2017-08-29 15:06:35',NULL,'qwerty'),('kMJzfuLV6DSGb032','aa','aaa','2017-08-28 14:54:20',NULL,'aaaa');
 /*!40000 ALTER TABLE `tbl_member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-28 14:41:49
+-- Dump completed on 2017-08-29 15:08:11

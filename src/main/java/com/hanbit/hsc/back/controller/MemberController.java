@@ -75,4 +75,15 @@ public class MemberController {
 		return member;
 	}
 
+	@RequestMapping("/signout")
+	public Map<Object, Object> signOut(HttpSession session) {
+		
+		session.invalidate();
+		
+		Map<Object, Object> result = new HashMap<>();
+		result.put("status", "ok");
+		
+		return result;
+	}
+	
 }

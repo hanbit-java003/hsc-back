@@ -43,7 +43,6 @@ public class MemberService {
 			uid[i] = CHARS[random.nextInt(CHARS.length)];
 		}
 		
-		System.out.println(new String(uid));
 		return new String(uid);
 	}
 

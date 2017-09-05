@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hanbit.hsc.back.annotation.SignInRequired;
 import com.hanbit.hsc.back.service.UserService;
 import com.hanbit.hsc.back.vo.SubmenuVO;
 import com.hanbit.hsc.back.vo.UserVO;
@@ -23,6 +23,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@SignInRequired
 	@RequestMapping("/users")
 	public List<UserVO> getUsers() {
 		return userService.getUsers();
@@ -39,7 +40,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/user/like/{id}")
-	public Map increaseLikeCount(@PathVariable("id") String id,
+	public Map<String, Boolean> increaseLikeCount(@PathVariable("id") String id,
 								 @RequestParam("submenuId")	String submenuId,
 								 @RequestParam("userNo") String userNo) {
 		
@@ -47,7 +48,7 @@ public class UserController {
 		submenuVO.setSubmenuId(submenuId);
 		submenuVO.setUserNo(userNo);
 		
-		Map result = new HashMap();
+		Map<String, Boolean> result = new HashMap<String, Boolean>();
 		result.put("ok", true);
 		
 		return result;

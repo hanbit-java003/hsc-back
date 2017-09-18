@@ -12,15 +12,42 @@
 	
 	<insert id="insertMember" parameterType="memberVO">
 		INSERT into tbl_member
-			(uid, email, pwd, regist_dt, regist_by, id)
+			(uid, id, email, pwd, regist_dt, regist_by, domain)
 		VALUES
-			(#{uid}, #{email}, #{pwd}, NOW(), #{registBy}, #{id})
+			(#{uid}, #{id}, #{email}, #{pwd}, NOW(), #{registBy}, #{domain})
 	</insert>
 	
-	<select id="selectMember" parameterType="string" resultType="memberVO">
-		SELECT uid, email, pwd, regist_dt, regist_by, id
-		  FROM tbl_member
+	<resultMap id="memberDetail" type="memberVO">
+		<result property="uid" column="uid" />
+		<result property="id" column="id" />
+		<result property="email" column="email" />
+		<result property="pwd" column="pwd" />
+		<association property="detail" javaType="memberDetailVO">
+			<result property="name" column="name" />
+			<result property="img" column="img" />
+			<result property="comment" column="comment" />
+		</association>
+	</resultMap>
+	
+	<select id="selectMember" parameterType="string" resultMap="memberDetail">
+		SELECT m.uid, id, email, pwd, domain, name, img, comment
+		  FROM tbl_member m LEFT JOIN tbl_member_detail d
+		    ON m.uid = d.uid
 		 WHERE email = #{email}
+	</select>
+	
+	<select id="selectMemberDetail" parameterType="string" resultMap="memberDetail">
+		SELECT m.uid, id, email, domain, name, img, comment
+ 		  FROM tbl_member m LEFT JOIN tbl_member_detail d
+    		ON m.uid = d.uid
+    	 WHERE m.uid = #{uid}
+	</select>
+	
+	<select id="selectUser" parameterType="string" resultMap="memberDetail">
+		SELECT m.uid, id, email, pwd, domain, name, img, comment
+		  FROM tbl_member m LEFT JOIN tbl_member_detail d
+		    ON m.uid = d.uid
+		 WHERE id = #{id}
 	</select>
 	
 </mapper>

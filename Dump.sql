@@ -56,13 +56,13 @@ CREATE TABLE `tbl_diary` (
   `img` varchar(200) NOT NULL,
   `each` varchar(45) DEFAULT NULL,
   `like` int(11) DEFAULT NULL,
-  `member_uid` varchar(100) NOT NULL,
   `country_id` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`,`member_uid`,`country_id`),
-  KEY `fk_tbl_diary_tbl_member_idx` (`member_uid`),
-  KEY `fk_tbl_diary_tbl_country1_idx` (`country_id`),
-  CONSTRAINT `fk_tbl_diary_tbl_country1` FOREIGN KEY (`country_id`) REFERENCES `tbl_country` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_diary_tbl_member` FOREIGN KEY (`member_uid`) REFERENCES `tbl_member` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `uid` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`,`country_id`,`uid`),
+  KEY `fk_tbl_diary_tbl_country_idx` (`country_id`),
+  KEY `fk_tbl_diary_tbl_member1_idx` (`uid`),
+  CONSTRAINT `fk_tbl_diary_tbl_country` FOREIGN KEY (`country_id`) REFERENCES `tbl_country` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_diary_tbl_member1` FOREIGN KEY (`uid`) REFERENCES `tbl_member` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -115,8 +115,6 @@ CREATE TABLE `tbl_member` (
   `pwd` varchar(300) NOT NULL,
   `regist_dt` varchar(300) NOT NULL,
   `regist_by` varchar(100) DEFAULT NULL,
-  `user_img` varchar(200) DEFAULT NULL,
-  `user_comment` varchar(500) DEFAULT NULL,
   `domain` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `email_UNIQUE` (`email`),
@@ -130,7 +128,36 @@ CREATE TABLE `tbl_member` (
 
 LOCK TABLES `tbl_member` WRITE;
 /*!40000 ALTER TABLE `tbl_member` DISABLE KEYS */;
+INSERT INTO `tbl_member` VALUES ('6sfWAv2Bgr5qe4vQ','asdf','asdf@asdf.com','cff621ede761697d47bed2656402f32d30e12f98f2a651c5f3c569317da56cc907e8ebb94899226d','2017-09-18 14:33:10',NULL,'asdf.withyolo.com'),('NuotQFMP3Y4CPhuA','qwer','qwer@qwer.com','26057a88d33e28cc0b7e8d174c6e5f46a82025a0fb7b46cae8bcafb82a7a4e64dd3a727b7fee6727','2017-09-18 14:50:44',NULL,'qwer.withyolo.com');
 /*!40000 ALTER TABLE `tbl_member` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_member_detail`
+--
+
+DROP TABLE IF EXISTS `tbl_member_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_member_detail` (
+  `uid` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `img` varchar(200) DEFAULT NULL,
+  `comment` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  KEY `fk_tbl_member_detail_tbl_member1_idx` (`uid`),
+  CONSTRAINT `fk_tbl_member_detail_tbl_member1` FOREIGN KEY (`uid`) REFERENCES `tbl_member` (`uid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_member_detail`
+--
+
+LOCK TABLES `tbl_member_detail` WRITE;
+/*!40000 ALTER TABLE `tbl_member_detail` DISABLE KEYS */;
+INSERT INTO `tbl_member_detail` VALUES ('6sfWAv2Bgr5qe4vQ','테스트','./img/user/gungye.jpg','누가 기침소리를 내었는가');
+/*!40000 ALTER TABLE `tbl_member_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -150,4 +177,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-18 12:30:06
+-- Dump completed on 2017-09-18 17:42:40

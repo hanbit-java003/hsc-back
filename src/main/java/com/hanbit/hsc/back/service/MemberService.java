@@ -60,5 +60,13 @@ public class MemberService {
 		
 		return memberVO;
 	}
+
+	public MemberVO getMemberDetail(String uid) {
+		return memberDAO.selectMemberDetail(uid);
+	}
+	
+	public MemberVO getUser(String id) {
+		return memberDAO.selectUser(id);
+	}
 	
 }

@@ -3,11 +3,13 @@ package com.hanbit.hsc.back.vo;
 public class MemberVO {
 
 	private String uid;
+	private String id;
 	private String email;
 	private String pwd;
 	private String registDt;
 	private String registBy;
-	private String id;
+	private String domain;
+	private MemberDetailVO detail;
 
 	public String getUid() {
 		return uid;
@@ -15,6 +17,14 @@ public class MemberVO {
 
 	public void setUid(String uid) {
 		this.uid = uid;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
@@ -49,12 +59,20 @@ public class MemberVO {
 		this.registBy = registBy;
 	}
 
-	public String getId() {
-		return id;
+	public String getDomain() {
+		return domain;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public MemberDetailVO getDetail() {
+		return detail;
+	}
+
+	public void setDetail(MemberDetailVO detail) {
+		this.detail = detail;
 	}
 
 }

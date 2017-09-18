@@ -33,6 +33,7 @@ dependencies {
 	
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
 	compile group: 'commons-io', name: 'commons-io', version: '2.5'
+	compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
 	
 	compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.2.3.RELEASE'
 	

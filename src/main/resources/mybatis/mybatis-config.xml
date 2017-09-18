@@ -10,14 +10,9 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="contentsVO" type="com.hanbit.hsc.back.vo.ContentsVO"/>
-		<typeAlias alias="submenuVO" type="com.hanbit.hsc.back.vo.SubmenuVO"/>
-		<typeAlias alias="userVO" type="com.hanbit.hsc.back.vo.UserVO"/>
-		<typeAlias alias="visitedVO" type="com.hanbit.hsc.back.vo.VisitedVO"/>
-		<typeAlias alias="userSubVO" type="com.hanbit.hsc.back.vo.UserSubVO"/>
+		<typeAlias alias="countryVO" type="com.hanbit.hsc.back.vo.CountryVO"/>
 		<typeAlias alias="memberVO" type="com.hanbit.hsc.back.vo.MemberVO"/>
-		
-		<typeAlias alias="adminGroupVO" type="com.hanbit.hsc.back.admin.vo.AdminGroupVO"/>
+		<typeAlias alias="fileVO" type="com.hanbit.hsc.back.vo.FileVO"/>
 	</typeAliases>
 	
 </configuration>

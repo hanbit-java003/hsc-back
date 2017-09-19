@@ -1,5 +1,7 @@
 package com.hanbit.hsc.back.vo;
 
+import java.util.List;
+
 public class MemberVO {
 
 	private String uid;
@@ -10,6 +12,7 @@ public class MemberVO {
 	private String registBy;
 	private String domain;
 	private MemberDetailVO detail;
+	private List<DiaryVO> diary;
 
 	public String getUid() {
 		return uid;
@@ -73,6 +76,14 @@ public class MemberVO {
 
 	public void setDetail(MemberDetailVO detail) {
 		this.detail = detail;
+	}
+
+	public List<DiaryVO> getDiary() {
+		return diary;
+	}
+
+	public void setDiary(List<DiaryVO> diary) {
+		this.diary = diary;
 	}
 
 }

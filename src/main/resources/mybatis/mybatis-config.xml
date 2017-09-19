@@ -13,6 +13,7 @@
 		<typeAlias alias="countryVO" type="com.hanbit.hsc.back.vo.CountryVO"/>
 		<typeAlias alias="memberVO" type="com.hanbit.hsc.back.vo.MemberVO"/>
 		<typeAlias alias="memberDetailVO" type="com.hanbit.hsc.back.vo.MemberDetailVO"/>
+		<typeAlias alias="diaryVO" type="com.hanbit.hsc.back.vo.DiaryVO"/>
 		<typeAlias alias="fileVO" type="com.hanbit.hsc.back.vo.FileVO"/>
 	</typeAliases>
 	

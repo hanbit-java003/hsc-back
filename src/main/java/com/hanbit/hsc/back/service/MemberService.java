@@ -66,7 +66,10 @@ public class MemberService {
 	}
 	
 	public MemberVO getUser(String id) {
-		return memberDAO.selectUser(id);
+		MemberVO member = memberDAO.selectUser(id);
+		member.setDiary(memberDAO.selectDiary(id));
+		
+		return member;
 	}
 	
 }

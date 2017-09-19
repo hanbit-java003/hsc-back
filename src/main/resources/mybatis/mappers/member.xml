@@ -27,6 +27,16 @@
 			<result property="img" column="img" />
 			<result property="comment" column="comment" />
 		</association>
+		<!-- <association property="diary" javaType="diaryVO">
+			<result property="did" column="did" />
+			<result property="title" column="title" />
+			<result property="text" column="text" />
+			<result property="title" column="title" />
+			<result property="together" column="together" />
+			<result property="rate" column="rate" />
+			<result property="photo" column="photo" />
+			<result property="countryId" column="country_id" />
+		</association> -->
 	</resultMap>
 	
 	<select id="selectMember" parameterType="string" resultMap="memberDetail">
@@ -46,8 +56,21 @@
 	<select id="selectUser" parameterType="string" resultMap="memberDetail">
 		SELECT m.uid, id, email, pwd, domain, name, img, comment
 		  FROM tbl_member m LEFT JOIN tbl_member_detail d
-		    ON m.uid = d.uid
+		  	ON m.uid = d.uid
 		 WHERE id = #{id}
+	</select>
+	
+ 	<select id="selectDiary" parameterType="string" resultType="diaryVO">
+		SELECT m.id, m.uid, did, title, text, photo, together, rate, country_id
+		  FROM tbl_member m LEFT JOIN tbl_diary d
+		    ON m.uid = d.uid
+		 WHERE m.id = #{id}
+	</select>
+	
+	<select id="" parameterType="string" resultMap="memberDetail">
+		SELECT m.uid, m.id, m.email, m.pwd, m.domain, d.name, d.img, d.comment, r.did, r.title, r.text, r.together, r.rate, r.photo, r.country_id, r.uid
+		  FROM (tbl_member m LEFT JOIN tbl_member_detail d ON m.uid = d.uid) LEFT JOIN tbl_diary r on m.uid = r.uid
+		 WHERE m.id = #{id}
 	</select>
 	
 </mapper>

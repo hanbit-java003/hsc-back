@@ -1,6 +1,7 @@
 package com.hanbit.hsc.back.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -107,6 +108,11 @@ public class MemberController {
 	@RequestMapping("/{id}")
 	public MemberVO getUser(@PathVariable("id") String id) {
 		return memberService.getUser(id);
+	}
+	
+	@RequestMapping("/members")
+	public List<MemberVO> getMembers() {
+		return memberService.getMembers();
 	}
 	
 }

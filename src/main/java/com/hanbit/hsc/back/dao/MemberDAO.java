@@ -39,4 +39,8 @@ public class MemberDAO {
 		return sqlSession.selectList("member.selectDiary", id);
 	}
 	
+	public List<MemberVO> selectMembers() {
+		return sqlSession.selectList("member.selectMembers");
+	}
+	
 }

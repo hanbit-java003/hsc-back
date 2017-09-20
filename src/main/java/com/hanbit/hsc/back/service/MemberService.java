@@ -1,5 +1,6 @@
 package com.hanbit.hsc.back.service;
 
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,10 @@ public class MemberService {
 		member.setDiary(memberDAO.selectDiary(id));
 		
 		return member;
+	}
+	
+	public List<MemberVO> getMembers() {
+		return memberDAO.selectMembers();
 	}
 	
 }

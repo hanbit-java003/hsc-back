@@ -73,6 +73,12 @@
 		 WHERE m.id = #{id}
 	</select>
 	
+	<select id="selectMembers" resultMap="memberDetail">
+		SELECT m.id, name, img, comment
+		  FROM tbl_member m LEFT JOIN tbl_member_detail d
+		    ON m.uid = d.uid
+	</select>
+	
 </mapper>
 
 
